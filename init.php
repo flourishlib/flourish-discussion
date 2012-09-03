@@ -7,6 +7,11 @@ fLoader::best();
 
 fTimestamp::setDefaultTimezone('America/New_York');
 
+// Models
+include APP_ROOT . 'models/user.php';
+include APP_ROOT . 'models/topic.php';
+include APP_ROOT . 'models/message.php';
+
 // Wiki engine
 $parser_source = APP_ROOT . 'lib/wiki-engine/FlourishWikiParser.plex';
 $parser_file   = APP_ROOT . 'lib/wiki-engine/FlourishWikiParser.php';
