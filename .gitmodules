@@ -1,0 +1,6 @@
+[submodule "lib/flourish"]
+	path = lib/flourish
+	url = https://github.com/flourishlib/flourish-classes.git
+[submodule "lib/wiki-engine"]
+	path = lib/wiki-engine
+	url = https://github.com/flourishlib/wiki-engine.git
