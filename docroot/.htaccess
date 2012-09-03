@@ -1,0 +1,18 @@
+AddDefaultCharset utf-8
+
+ErrorDocument 403 /router.php
+
+DirectorySlash Off
+
+RewriteEngine on
+RewriteBase /
+
+# Strip trailing slashes
+RewriteRule     ^(.+)/$                              /$1 [L,R=301]
+
+# Push requests to the router
+RewriteCond     %{ENV:REDIRECT_STATUS}               ^$
+RewriteCond     %{DOCUMENT_ROOT}%{REQUEST_URI}       !-f
+RewriteCond     %{DOCUMENT_ROOT}%{REQUEST_URI}       !-d
+RewriteRule     ^(.*)$                               /router.php [L]
+RewriteRule     ^$                                   /router.php [L]

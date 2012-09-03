@@ -26,3 +26,9 @@ include APP_ROOT . 'lib/wiki-engine/WikiParser.php';
 include APP_ROOT . 'lib/wiki-engine/WikiPlugin.php';
 include APP_ROOT . 'lib/wiki-engine/ParserIterator.php';
 include APP_ROOT . 'lib/wiki-engine/FlourishWikiParser.php';
+
+// Template
+$tmpl = new fTemplating(APP_ROOT);
+$tmpl->set('header', 'partials/header.php');
+$tmpl->set('footer', 'partials/footer.php');
+fTemplating::attach($tmpl);
