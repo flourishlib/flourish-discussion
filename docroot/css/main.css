@@ -15,8 +15,8 @@
 
 html {
 	background-color: #FFF;
-	margin: 0px;
-	padding: 0px;	
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -105,7 +105,7 @@ footer {
 
 p {
 	margin-bottom: 1em;
-	margin-top: 0px;
+       margin-top: 0;
 }	
 
 h1, h2, h3, h4 {
@@ -166,8 +166,8 @@ dt {
 }
 
 ul {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	margin-bottom: 20px;
 }
 	ul ul {
@@ -181,13 +181,13 @@ ol {
 }
 
 li {
-	margin: 0px 0px 0px 25px;
-	padding: 0px;
+	margin: 0 0 0 25px;
+	padding: 0;
 }	
 
 form {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 }
 	
 input {
@@ -221,8 +221,8 @@ pre.cm-s-default {
 
 
 section.main {
-	width: 960px;
-	margin: 0px auto 0px auto;
+	width: 960;
+	margin: 0 auto 0 auto;
 }
 
 div.intro {
