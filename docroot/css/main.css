@@ -30,12 +30,12 @@ body {
 
 a {
 	text-decoration: none;
-	color: #678DB7; 
+	color: #678DB7;
 }
 	a:visited { text-decoration: none; color: #5C89BC; }
 	a:active  { text-decoration: none; color: #5C89BC; }
-	a:hover   { text-decoration: none; color: #4772A3; }	
-	
+	a:hover   { text-decoration: none; color: #4772A3; }
+
 a img {
 	border: none;
 }
@@ -109,8 +109,8 @@ footer {
 
 p {
 	margin-bottom: 1em;
-       margin-top: 0;
-}	
+	margin-top: 0;
+}
 
 h1, h2, h3, h4 {
 	font-family: 'Arimo', Helvetica, Arial, sans-serif;
@@ -187,13 +187,13 @@ ol {
 li {
 	margin: 0 0 0 25px;
 	padding: 0;
-}	
+}
 
 form {
 	padding: 0;
 	margin: 0;
 }
-	
+
 input {
 	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
 	font-size: 1.0em;
