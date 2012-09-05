@@ -44,10 +44,7 @@ if ($this->get('topics')->count()) {
 								<?= $last_message->getDateTime()->getFuzzyDifference() ?>
 							</span>
 							<span class="replier">
-								by
-								<? if ($replier->makeUrl()) { ?> <a href="<?= $replier->makeUrl() ?>"><? } ?>
-									<?= $replier->encodeName() ?></a>
-								<? if ($replier->makeUrl()) { ?></a> <? } ?>
+								by <?= $replier->encodeName() ?></a>
 							</span>
 						</a>
 					</td>
