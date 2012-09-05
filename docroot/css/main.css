@@ -154,6 +154,11 @@ tt, code {
 
 th {
 	vertical-align: top;
+	text-align: left;
+}
+
+td {
+	vertical-align: top;
 }
 
 dt {
