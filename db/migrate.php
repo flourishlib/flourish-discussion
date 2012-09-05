@@ -59,8 +59,8 @@ foreach ($topics as $topic) {
 		$topic['id'],
 		$topic['time'],
 		$author,
-		$topic['subject'],
-		$topic['body']
+		strtr($topic['subject'], array("\r\n" => "\n", "\r" => "\n")),
+		strtr($topic['body'], array("\r\n" => "\n", "\r" => "\n"))
 	);
 }
 
@@ -102,9 +102,9 @@ foreach ($messages as $message) {
 		$message['id'],
 		$message['time'],
 		$author,
-		$message['topic'],
+		strtr($message['topic'], array("\r\n" => "\n", "\r" => "\n")),
 		$parent_id,
-		$message['body']
+		strtr($message['body'], array("\r\n" => "\n", "\r" => "\n"))
 	);
 }
 
