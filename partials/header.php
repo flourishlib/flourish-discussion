@@ -5,6 +5,7 @@
 		<title><?= $this->encode('title') ?></title>
 		<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/main.css" type="text/css" media="all">
+		<link rel="stylesheet" href="/css/discussion.css" type="text/css" media="all">
 		<link rel="stylesheet" href="/js/codemirror.css" type="text/css">
 		<script src="/js/jquery-1.7.2.min.js"></script>
 		<script src="/js/codemirror.js"></script>

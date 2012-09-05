@@ -1,0 +1,81 @@
+div.topic {
+
+}
+
+table.discussion {
+	width: 100%;
+}
+	table.discussion td {
+		padding: 6px 0;
+		line-height: 1.2;
+		vertical-align: middle;
+		border-top: 1px solid #eee;
+	}
+		table.discussion td.subject {
+			max-width: 550px;
+		}
+		table.discussion td h2 {
+			font-size: 1.2em;
+			margin: 0;
+		}
+
+		table.discussion td span.author,
+		table.discussion td span.date_posted {
+			font-size: 0.85em;
+		}
+		table.discussion td span.date_posted {
+			padding-left: 5px;
+		}
+
+		table.discussion th.replies,
+		table.discussion td.replies {
+			text-align: center;
+		}
+		table.discussion td.last_reply a {
+			color: #777;
+		}
+
+		table.discussion td span.replier,
+		table.discussion td span.date_replied {
+			font-size: 0.85em;
+			display: block;
+		}
+
+div.paginator_list {
+	margin-top: 20px;
+	font-size: 1.1em;
+}
+	div.paginator_list ul {
+		list-style-type: none;
+	}
+		div.paginator_list ul li {
+			display: inline-block;
+			margin: 0 2px;
+			padding: 0;
+			border-radius: 3px;
+		}
+			div.paginator_list ul li a {
+				padding: 4px 6px;
+				color: #666;
+			}
+
+			div.paginator_list ul li.prev,
+			div.paginator_list ul li.next {
+				background-color: #eee;
+			}
+
+			div.paginator_list ul li.prev {
+				margin-right: 5px;
+			}
+
+			div.paginator_list ul li.next {
+				margin-left: 5px;
+			}
+
+			div.paginator_list ul li.current {
+				background-color: #999;
+				font-weight: bold;
+			}
+				div.paginator_list ul li.current a {
+					color: #fff;
+				}
