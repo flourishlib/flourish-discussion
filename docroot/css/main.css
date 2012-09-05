@@ -102,6 +102,10 @@ footer {
 	padding-bottom: 10px;
 	clear: both;
 }
+	footer section.main {
+		padding-top: 10px;
+		border-top: 1px dotted #ddd;
+	}
 
 p {
 	margin-bottom: 1em;
