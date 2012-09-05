@@ -20,6 +20,14 @@ function get_author($new_db, $author) {
 }
 
 
+$new_db->query("SELECT setval('topics_id_seq', 1, false)");
+$new_db->query("SELECT setval('messages_id_seq', 1, false)");
+$new_db->query("SELECT setval('users_id_seq', 1, false)");
+$new_db->query("DELETE FROM messages");
+$new_db->query("DELETE FROM topics");
+$new_db->query("DELETE FROM users");
+
+
 $topics = $old_db->query("
 	SELECT
 		*
