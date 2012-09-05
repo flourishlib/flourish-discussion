@@ -1,7 +1,7 @@
 <?
 $this->place('header');
 ?>
-<h1>Disucssion</h1>
+<h1>Discussion</h1>
 
 <?
 if ($this->get('topics')->count()) {
