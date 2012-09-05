@@ -35,3 +35,7 @@ $tmpl = new fTemplating(APP_ROOT);
 $tmpl->set('header', 'partials/header.php');
 $tmpl->set('footer', 'partials/footer.php');
 fTemplating::attach($tmpl);
+
+// DB
+$db = new fDatabase('postgresql', 'discussion_flourishlib_com', 'postgres');
+fORMDatabase::attach($db);
