@@ -7,6 +7,9 @@ fLoader::best();
 
 fTimestamp::setDefaultTimezone('America/New_York');
 
+fCore::enableErrorHandling('html');
+fCore::enableExceptionHandling('html');
+
 // Models
 include APP_ROOT . 'models/user.php';
 include APP_ROOT . 'models/topic.php';
