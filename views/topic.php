@@ -1,8 +1,9 @@
 <?
-$this->place('header');
-
 $topic = $this->get('topic');
 $author = $topic->createUser();
+
+$this->set('title', $topic->getSubject() . ' – Discussion – Flourish');
+$this->place('header');
 ?>
 <h1><?= $topic->encodeSubject() ?></h1>
 <div class="topic_details">

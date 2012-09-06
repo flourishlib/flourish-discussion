@@ -1,4 +1,5 @@
 <?
+$this->set('title', 'Not Found – Flourish');
 $this->place('header');
 ?>
 <h1>Not Found!</h1>
