@@ -6,7 +6,7 @@ class Topic extends fActiveRecord
 		return fRecordSet::build(
 			__CLASS__,
 			array(),
-			array('date_time' => 'desc'),
+			array('CASE WHEN MAX(messages.date_time) IS NOT NULL THEN MAX(messages.date_time) ELSE topics.date_time END' => 'desc'),
 			$limit,
 			$page
 		);
