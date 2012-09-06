@@ -9,7 +9,8 @@ if ('/' == $url) {
 } elseif ('/oauth' == $url) {
 	$controller = 'controllers/oauth.php';
 
-} elseif (preg_match('#^/\d+$#', $url)) {
+} elseif (preg_match('#^/(\d+)$#', $url, $match)) {
+	fRequest::set('id', $match[1]);
 	$controller = 'controllers/topic.php';
 
 } else {

@@ -1,7 +1,3 @@
-div.topic {
-
-}
-
 table.discussion {
 	width: 100%;
 }
@@ -79,3 +75,37 @@ div.paginator_list {
 				div.paginator_list ul li.current a {
 					color: #fff;
 				}
+
+div.topic_details {
+	margin-top: -18px;
+	margin-bottom: 20px;
+	font-size: 0.875em;
+}
+
+div.children > div.message {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px dotted #ddd;
+}
+
+div.children > div.message > div.body {
+	padding: 10px;
+	background-color: #f6f6f6;
+}
+	div.children > div.message > div.body p:last-child {
+		margin-bottom: 0;
+	}
+
+	div.children > div.message > div.message_details {
+		padding-left: 5px;
+		padding-top: 5px;
+		font-size: 0.875em;
+	}
+
+div.children > div.message > div.children {
+	margin-left: 20px;
+}
+
+div.messages > div.children > div.message:first-child {
+	border-top: 1px solid #ccc;
+}
