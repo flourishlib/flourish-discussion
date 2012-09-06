@@ -22,16 +22,16 @@
 	<body>
 		<header>
 			<section class="main group">
-				<a href="/"><img src="/img/logo.png" alt="Flourish" /></a>
+				<a href="http://new.flourishlib.com"><img src="/img/logo.png" alt="Flourish" /></a>
 				<span class="tagline">PHP Unframework</span>
 				<nav class="group">
-					<a href="/docs">Documentation</a>
-					<a href="/Download">Download</a>
+					<a href="http://new.flourishlib.com/docs">Documentation</a>
+					<a href="http://new.flourishlib.com/Download">Download</a>
 					<a href="https://github.com/flourishlib/flourish-classes">Code</a>
 					<a href="https://github.com/flourishlib/flourish-classes/issues">Issues</a>
-					<a href="/Tests">Tests</a>
-					<a href="http://forum.flourishlib.com">Discussion</a>
-					<a href="/blog">Blog</a>
+					<a href="http://new.flourishlib.com/Tests">Tests</a>
+					<a href="/">Discussion</a>
+					<a href="http://new.flourishlib.com/blog">Blog</a>
 				</nav>
 			</section>
 		</header>
