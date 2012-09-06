@@ -52,10 +52,10 @@ if ($this->get('topics')->count()) {
 				} else {
 					?>
 					<td class="replies none">
-						0
+						–
 					</td>
 					<td class="last_reply">
-
+						–
 					</td>
 					<?
 				}
