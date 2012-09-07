@@ -198,6 +198,11 @@ input {
 	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
 	font-size: 1.0em;
 }
+	input[type="checkbox"] {
+		margin: 0;
+		position: relative;
+		top: 2px;
+	}
 
 textarea {
 	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
@@ -207,6 +212,29 @@ textarea {
 label {
 	font-weight: bold;
 	display: block;
+}
+	label.inline {
+		font-weight: normal;
+		display: inline;
+	}
+
+div.success,
+div.error,
+p.success,
+p.error {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	padding: 5px 10px;
+}
+div.success,
+p.success {
+	background-color: #f0f4e9;
+}
+div.error,
+p.error {
+
 }
 
 pre {
@@ -218,14 +246,14 @@ pre {
 }
 
 pre.cm-s-default {
-	font-family: "Consolas", "Driod Sans Mono", monospace;
+	font-family: "Consolas", "Dejavu Sans Mono", "Bitstream Vera Sans Mono", "Driod Sans Mono", "Liberation Mono", monospace;
 	font-size: 0.85em;
 }
 
 
 
 section.main {
-	width: 960;
+	width: 960px;
 	margin: 0 auto 0 auto;
 }
 

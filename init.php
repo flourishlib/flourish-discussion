@@ -1,6 +1,9 @@
 <?php
 define('APP_ROOT', dirname(__FILE__) . '/');
 
+define('GITHUB_CLIENT_ID', 'b11ad2223cc60566bfe3');
+define('GITHUB_CLIENT_SECRET_FILENAME', APP_ROOT . 'github_client_secret.txt');
+
 // Flourish
 include APP_ROOT . 'lib/flourish/fLoader.php';
 fLoader::best();
@@ -9,6 +12,9 @@ fTimestamp::setDefaultTimezone('America/New_York');
 
 fCore::enableErrorHandling('html');
 fCore::enableExceptionHandling('html');
+
+fSession::open();
+fAuthorization::setLoginPage('/oauth');
 
 // Models
 include APP_ROOT . 'models/user.php';

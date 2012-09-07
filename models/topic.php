@@ -43,4 +43,50 @@ class Topic extends fActiveRecord
 		}
 		return Markdown($this->getBody());
 	}
+
+	function subscribe($user)
+	{
+		$db = fORMDatabase::retrieve();
+		$already_subscribed = $db->query("
+			SELECT
+				COUNT(*)
+			FROM
+				subscriptions
+			WHERE
+				user_id = %i AND
+				topic_id = %i
+			",
+			$user->getId(),
+			$this->getId()
+		)->fetchScalar();
+		if (!$already_subscribed) {
+			$db->query("
+				INSERT INTO subscriptions (
+						user_id,
+						topic_id
+					) VALUES (
+						%i,
+						%i
+					)
+				",
+				$user->getId(),
+				$this->getId()
+			);
+		}
+	}
+
+	function unsubscribe($user)
+	{
+		$db = fORMDatabase::retrieve();
+		$check_res = $db->query("
+			DELETE FROM
+				subscriptions
+			WHERE
+				user_id = %i AND
+				topic_id = %i
+			",
+			$user->getId(),
+			$this->getId()
+		);
+	}
 }

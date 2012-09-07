@@ -20,7 +20,7 @@ if ($children->count()) {
 					<span class="author">
 						posted by
 						<? if ($author->makeUrl()) { ?> <a href="<?= $author->makeUrl() ?>"><? } ?>
-							<?= $author->encodeName() ?></a>
+							<?= $author->encodeLogin() ?>
 						<? if ($author->makeUrl()) { ?></a> <? } ?>
 					</span>
 					<span class="date_posted" title="<?= $message->prepareDateTime('n/j/y g:ia') ?>">

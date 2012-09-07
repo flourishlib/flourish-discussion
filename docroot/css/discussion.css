@@ -1,3 +1,71 @@
+body > section.main {
+	position: relative;
+}
+
+div.user_details {
+	position: absolute;
+	right: 0;
+	top: -20px;
+	line-height: 1.2;
+}
+	div.user_details img {
+		float: left;
+		margin-right: 10px;
+		display: block;
+	}
+	div.user_details .login {
+		float: left;
+		display: block;
+		margin-top: 3px;
+	}
+	div.user_details a {
+		display: block;
+		float: left;
+		font-size: 1.4em;
+		margin-left: 10px;
+		margin-top: 1px;
+		color: #888;
+	}
+		div.user_details a:hover {
+			color: #444;
+		}
+		div.user_details a.account {
+			font-size: 1em;
+		}
+		div.user_details a.settings {
+			margin-left: 20px;
+		}
+
+div.profile {
+
+}
+	div.profile img {
+		float: left;
+		display: block;
+		margin-right: 10px;
+	}
+	div.profile span.email {
+		display: block;
+	}
+
+label.subscribe_all {
+	display: block;
+	margin-top: 20px;
+}
+
+p.subscriptions_help {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px dotted #ddd;
+}
+
+ul.subscriptions {
+	list-style-type: none;
+}
+	ul.subscriptions li {
+		margin-left: 0;
+	}
+
 table.discussion {
 	width: 100%;
 }
@@ -81,6 +149,19 @@ div.topic_details {
 	margin-bottom: 20px;
 	font-size: 0.875em;
 }
+	div.topic_details form {
+		display: inline;
+	}
+	div.topic_details span.subscription {
+		padding-left: 30px;
+		opacity: 0.5;
+	}
+		div.topic_details span.subscription:hover {
+			opacity: 1.0;
+		}
+		div.topic_details span.subscription span {
+			cursor: help;
+		}
 
 div.children > div.message {
 	margin-top: 20px;

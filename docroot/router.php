@@ -6,7 +6,13 @@ $url = fURL::get();
 if ('/' == $url) {
 	$controller = 'controllers/list.php';
 
-} elseif ('/oauth' == $url) {
+} elseif ('/account' == $url) {
+	$controller = 'controllers/account.php';
+
+} elseif ('/logout' == $url) {
+	$controller = 'controllers/logout.php';
+
+} elseif ('/oauth' == $url || '/login' == $url) {
 	$controller = 'controllers/oauth.php';
 
 } elseif (preg_match('#^/(\d+)$#', $url, $match)) {

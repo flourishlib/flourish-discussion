@@ -23,7 +23,7 @@ if ($this->get('topics')->count()) {
 					<span class="author">
 						by
 						<? if ($author->makeUrl()) { ?> <a href="<?= $author->makeUrl() ?>"><? } ?>
-							<?= $author->encodeName() ?></a>
+							<?= $author->encodeLogin() ?>
 						<? if ($author->makeUrl()) { ?></a> <? } ?>
 					</span>
 					<span class="date_posted" title="<?= $topic->prepareDateTime('n/j/y g:ia') ?>">
@@ -45,7 +45,7 @@ if ($this->get('topics')->count()) {
 								<?= $last_message->getDateTime()->getFuzzyDifference() ?>
 							</span>
 							<span class="replier">
-								by <?= $replier->encodeName() ?></a>
+								by <?= $replier->encodeLogin() ?>
 							</span>
 						</a>
 					</td>
