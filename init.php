@@ -2,12 +2,18 @@
 define('APP_ROOT', dirname(__FILE__) . '/');
 
 define('GITHUB_CLIENT_ID', 'b11ad2223cc60566bfe3');
+
+// For security purposes (since the source is on github), the
+// github API secret and gmail password are stored in files on
+// the filesystem that are not checked in to version control
 define('GITHUB_CLIENT_SECRET_FILENAME', APP_ROOT . 'github_client_secret.txt');
 
 // Flourish
 include APP_ROOT . 'lib/flourish/fLoader.php';
 fLoader::best();
 
+
+// Flourish config
 fTimestamp::setDefaultTimezone('America/New_York');
 
 fCore::enableErrorHandling('html');
@@ -16,10 +22,29 @@ fCore::enableExceptionHandling('html');
 fSession::open();
 fAuthorization::setLoginPage('/oauth');
 
+$tmpl = new fTemplating(APP_ROOT);
+$tmpl->set(array(
+	'header' => 'partials/header.php',
+	'footer' => 'partials/footer.php'
+));
+fTemplating::attach($tmpl);
+
+fORMDatabase::attach(new fDatabase(
+	'postgresql',
+	'discussion_flourishlib_com',
+	'postgres'
+));
+
+
+// Helpers
+include APP_ROOT . 'helpers/links.php';
+
+
 // Models
 include APP_ROOT . 'models/user.php';
 include APP_ROOT . 'models/topic.php';
 include APP_ROOT . 'models/message.php';
+
 
 // Wiki engine
 $parser_source = APP_ROOT . 'lib/wiki-engine/FlourishWikiParser.plex';
@@ -36,12 +61,4 @@ include APP_ROOT . 'lib/wiki-engine/WikiPlugin.php';
 include APP_ROOT . 'lib/wiki-engine/ParserIterator.php';
 include APP_ROOT . 'lib/wiki-engine/FlourishWikiParser.php';
 
-// Template
-$tmpl = new fTemplating(APP_ROOT);
-$tmpl->set('header', 'partials/header.php');
-$tmpl->set('footer', 'partials/footer.php');
-fTemplating::attach($tmpl);
-
-// DB
-$db = new fDatabase('postgresql', 'discussion_flourishlib_com', 'postgres');
-fORMDatabase::attach($db);
+include APP_ROOT . 'lib/markdown/markdown.php';

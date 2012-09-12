@@ -12,6 +12,16 @@ class User extends fActiveRecord
 		);
 	}
 
+	function isAdmin()
+	{
+		return $this->getAuthLevel() == 'Admin';
+	}
+
+	function isModerator()
+	{
+		return in_array($this->getAuthLevel(), array('Admin', 'Moderator'));
+	}
+
 	function makeUrl()
 	{
 		if ($this->getFromGithub()) {

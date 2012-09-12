@@ -117,6 +117,8 @@ div.paginator_list {
 			margin: 0 2px;
 			padding: 0;
 			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
 		}
 			div.paginator_list ul li a {
 				padding: 4px 6px;
@@ -154,7 +156,7 @@ div.topic_details {
 	}
 	div.topic_details span.subscription {
 		padding-left: 30px;
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 		div.topic_details span.subscription:hover {
 			opacity: 1.0;
@@ -163,10 +165,22 @@ div.topic_details {
 			cursor: help;
 		}
 
+div.topic.actions {
+	font-size: 0.875em;
+}
+
+div.topic.actions form {
+	display: inline;
+}
+
 div.children > div.message {
 	margin-top: 20px;
 	padding-top: 20px;
 	border-top: 1px dotted #ddd;
+}
+
+div.children > div.message div.edit {
+	display: none;
 }
 
 div.children > div.message > div.body {
@@ -182,6 +196,12 @@ div.children > div.message > div.body {
 		padding-top: 5px;
 		font-size: 0.875em;
 	}
+		div.children > div.message > div.message_details span.reply {
+			padding-left: 30px;
+		}
+		div.children > div.message > div.message_details form {
+			display: inline;
+		}
 
 div.children > div.message > div.children {
 	margin-left: 20px;
@@ -190,3 +210,79 @@ div.children > div.message > div.children {
 div.messages > div.children > div.message:first-child {
 	border-top: 1px solid #ccc;
 }
+
+div.reply {
+	display: none;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+	div.reply span.in_reply_to {
+		font-size: 0.875em;
+		padding-left: 5px;
+	}
+
+span.delete {
+	padding-left: 10px;
+}
+span.edit {
+	padding-left: 10px;
+}
+
+label.inline.subscribe {
+	padding-left: 20px;
+	cursor: help;
+}
+
+div#edit {
+	display: none;
+}
+
+div#edit textarea,
+div.reply textarea,
+div.edit textarea,
+div.post textarea {
+	border: 1px solid #ccc;
+	margin: 0 0;
+	padding: 4px;
+	width: 100%;
+	max-height: 400px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+div#edit input[type="text"],
+div.post input[type="text"] {
+	border: 1px solid #ccc;
+	margin: 0 0 10px;
+	padding: 4px;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+div.expandingText {
+	margin-bottom: 5px;
+}
+
+div.new_topic {
+	margin: 15px 0;
+	font-weight: bold;
+}
+	div.new_topic i {
+		color: #777;
+		opacity: 0.7;
+		padding: 0 1px
+	}
+		div.new_topic a:hover i {
+			opacity: 1.0;
+		}
+
+a.action {
+	color: #777;
+	opacity: 0.7;
+}
+	a.action:hover {
+		opacity: 1.0;
+	}

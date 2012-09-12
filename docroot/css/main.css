@@ -234,8 +234,19 @@ p.success {
 }
 div.error,
 p.error {
-
+	background-color: #f4ebe9;
 }
+
+	div.success p,
+	div.error p {
+		margin: 7px 0;
+	}
+
+	div.success ul,
+	div.error ul {
+		margin: 7px 0;
+		font-size: 0.9em;
+	}
 
 pre {
 	margin: 0 0 1em 0;
@@ -377,8 +388,8 @@ div.main_actions a.action {
 	text-align: left;
 }
 
-a.action,
-div.action {
+div.main_actions a.action,
+div.main_actions div.action {
 	line-height: 1.2;
 	background-color: #8fb0d5;
 	background-image: -webkit-gradient(
@@ -407,8 +418,8 @@ div.action {
 	div.action a {
 		color: #fff;
 	}
-	a.action:hover,
-	div.action:hover {
+	div.main_actions a.action:hover,
+	div.main_actions div.action:hover {
 		background-color: #97b9e0;
 		background-image: -webkit-gradient(
 			linear,

@@ -15,6 +15,9 @@ if ('/' == $url) {
 } elseif ('/oauth' == $url || '/login' == $url) {
 	$controller = 'controllers/oauth.php';
 
+} elseif ('/new' == $url) {
+	$controller = 'controllers/topic.php';
+
 } elseif (preg_match('#^/(\d+)$#', $url, $match)) {
 	fRequest::set('id', $match[1]);
 	$controller = 'controllers/topic.php';

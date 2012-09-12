@@ -6,9 +6,10 @@ CREATE TABLE users (
 	id                        SERIAL PRIMARY KEY,
 	login                     VARCHAR NOT NULL UNIQUE,
 	name                      VARCHAR NOT NULL,
+	auth_level                VARCHAR NOT NULL DEFAULT 'User' CHECK(auth_level IN ('User', 'Moderator', 'Admin')),
 	from_github               BOOLEAN NOT NULL DEFAULT FALSE,
 	gravatar_id               VARCHAR NOT NULL DEFAULT '',
-	email                     VARCHAR NOT NULL DEFAULT '',
+	email                     VARCHAR UNIQUE,
 	subscribe_to_all_topics   BOOLEAN NOT NULL DEFAULT FALSE
 );
 

@@ -5,6 +5,14 @@ $this->place('header');
 <h1>Discussion</h1>
 
 <?
+fMessaging::show(array('success', 'error'));
+?>
+
+<div class="new_topic">
+	<a href="<?= auth_only_link('/new') ?>" class="action"><i class="icon-comment-alt"></i> New Topic</a>
+</div>
+
+<?
 if ($this->get('topics')->count()) {
 	?>
 	<table cellspacing="0" class="discussion">
