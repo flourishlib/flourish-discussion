@@ -1,0 +1,20 @@
+Hi {{name}},
+
+A new reply was just posted to a topic you have subscribed to.
+
+--------
+
+Link: {{url}}
+Original Topic: {{subject}}
+Reply by: {{author}}
+
+--------
+
+{{body}}
+
+--------
+
+Flourish
+PHP Unframework
+
+Unsubscribe at {{domain}}/account

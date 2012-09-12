@@ -1,23 +1,42 @@
 <?php
 define('APP_ROOT', dirname(__FILE__) . '/');
 
+
+define('ENVIRONMENT', 'production');
+
+if (ENVIRONMENT == 'production') {
+	$error_destination = 'will@flourishlib.com';
+
+} else {
+	$error_destination = 'html';
+	define('EMAIL_OVERRIDE', 'will@flourishlib.com');
+}
+
+
 define('GITHUB_CLIENT_ID', 'b11ad2223cc60566bfe3');
 
 // For security purposes (since the source is on github), the
 // github API secret and gmail password are stored in files on
 // the filesystem that are not checked in to version control
 define('GITHUB_CLIENT_SECRET_FILENAME', APP_ROOT . 'github_client_secret.txt');
+define('GMAIL_PASSWORD_FILENAME', APP_ROOT . 'gmail_password.txt');
+
 
 // Flourish
 include APP_ROOT . 'lib/flourish/fLoader.php';
 fLoader::best();
 
 
+// Helpers
+include APP_ROOT . 'helpers/links.php';
+include APP_ROOT . 'helpers/email.php';
+
+
 // Flourish config
 fTimestamp::setDefaultTimezone('America/New_York');
 
-fCore::enableErrorHandling('html');
-fCore::enableExceptionHandling('html');
+fCore::enableErrorHandling($error_destination);
+fCore::enableExceptionHandling($error_destination);
 
 fSession::open();
 fAuthorization::setLoginPage('/oauth');
@@ -36,12 +55,10 @@ fORMDatabase::attach(new fDatabase(
 ));
 
 
-// Helpers
-include APP_ROOT . 'helpers/links.php';
-
-
 // Models
 include APP_ROOT . 'models/user.php';
+include APP_ROOT . 'models/queued_email.php';
+include APP_ROOT . 'models/bounced_email.php';
 include APP_ROOT . 'models/topic.php';
 include APP_ROOT . 'models/message.php';
 

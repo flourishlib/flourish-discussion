@@ -1,6 +1,19 @@
 <?php
 class User extends fActiveRecord
 {
+	static function buildSubscribed($topic_id, $ignore_user)
+	{
+		return fRecordSet::build(
+			__CLASS__,
+			array(
+				'subscribe_to_all_topics=|topics{subscriptions}.id=' => array(TRUE, $topic_id)
+			),
+			array(
+				'login' => 'asc'
+			)
+		)->diff($ignore_user);
+	}
+
 	protected function configure()
 	{
 		fORMColumn::configureEmailColumn($this, 'email');

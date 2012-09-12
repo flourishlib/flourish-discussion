@@ -50,6 +50,7 @@ try {
 				$topic->setBody($body);
 				$topic->setFormat('Markdown');
 				$topic->store();
+				$topic->notifyNew($user);
 
 				$topic->subscribe($user);
 
@@ -79,6 +80,7 @@ try {
 				$reply_message->setFormat('Markdown');
 				$reply_message->setAuthor($user->getId());
 				$reply_message->store();
+				$reply_message->notifyNew($user);
 
 				if (fRequest::get('subscribe')) {
 					$topic->subscribe($user);
@@ -94,6 +96,7 @@ try {
 				$reply_message->validateAuth($user, 'edit');
 				$reply_message->setBody($body);
 				$reply_message->store();
+				$reply_message->notifyEdit($user);
 
 				$success = 'The content of your reply was successfully updated';
 				$url     = $reply_message->makeUrl();
@@ -105,6 +108,7 @@ try {
 				$topic->setSubject($subject);
 				$topic->setBody($body);
 				$topic->store();
+				$topic->notifyEdit($user);
 
 				$success = 'The content of your topic was successfully updated';
 				$url     = $topic->makeUrl();

@@ -1,0 +1,20 @@
+Hi {{name}},
+
+A topic you are subscribed to was just edited.
+
+--------
+
+Link: {{url}}
+Topic: {{subject}}
+Posted by: {{author}}
+
+--------
+
+{{body}}
+
+--------
+
+Flourish
+PHP Unframework
+
+Unsubscribe at {{domain}}/account

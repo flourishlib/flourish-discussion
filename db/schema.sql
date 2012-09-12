@@ -37,3 +37,24 @@ CREATE TABLE subscriptions (
 	topic_id                  INTEGER NOT NULL REFERENCES topics(id) ON DELETE CASCADE,
 	PRIMARY KEY(user_id, topic_id)
 );
+
+CREATE TABLE queued_emails (
+	id                        SERIAL PRIMARY KEY,
+	"to"                      VARCHAR NOT NULL,
+	to_name                   VARCHAR NOT NULL,
+	subject                   VARCHAR NOT NULL,
+	body                      VARCHAR NOT NULL
+);
+
+CREATE TABLE bounced_emails (
+	id                        SERIAL PRIMARY KEY,
+	user_id                   INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+	sent                      TIMESTAMP NOT NULL,
+	message_id                VARCHAR NOT NULL UNIQUE,
+	"from"                    VARCHAR NOT NULL,
+	"to"                      VARCHAR NOT NULL,
+	subject                   VARCHAR NOT NULL,
+	body                      TEXT NOT NULL,
+	bounce_message            TEXT NOT NULL,
+	bounce_source             TEXT NOT NULL
+);
