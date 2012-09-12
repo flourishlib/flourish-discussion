@@ -38,6 +38,9 @@ $response = file_get_contents(
 	$context
 );
 $response = json_decode($response, TRUE);
+if (!isset($response['access_token'])) {
+	fURL::redirect('?');
+}
 $access_token = $response['access_token'];
 
 // Update our local user database with the latest info from github
