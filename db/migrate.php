@@ -156,3 +156,45 @@ foreach ($users as $user) {
 		fUTF8::lower($user['login'])
 	);
 }
+
+// Fix my two logins
+$new_db->query("
+	UPDATE
+		topics
+	SET
+		author = (SELECT id FROM users WHERE email = 'will@flourishlib.com')
+	WHERE
+		author = (SELECT id FROM users WHERE email = 'will@wbond.net')
+");
+$new_db->query("
+	UPDATE
+		messages
+	SET
+		author = (SELECT id FROM users WHERE email = 'will@flourishlib.com')
+	WHERE
+		author = (SELECT id FROM users WHERE email = 'will@wbond.net')
+");
+$new_db->query("
+	DELETE FROM
+		users
+	WHERE
+		email = 'will@wbond.net'
+");
+$new_db->query("
+	UPDATE
+		users
+	SET
+		email = 'will@wbond.net'
+	WHERE
+		email = 'will@flourishlib.com'
+");
+
+// Update myself to an admin
+$new_db->query("
+	UPDATE
+		users
+	SET
+		auth_level = 'Admin'
+	WHERE
+		email = 'will@wbond.net'
+");
