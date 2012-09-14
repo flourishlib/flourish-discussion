@@ -48,9 +48,16 @@ $user_info = file_get_contents('https://api.github.com/user?access_token=' . url
 $user_info = json_decode($user_info, TRUE);
 
 try {
-	$user = new User(array(
-		'email' => fUTF8::lower($user_info['email'])
-	));
+	if (isset($user_info['email'])) {
+		$key = array(
+			'email' => fUTF8::lower($user_info['email'])
+		);
+	} else {
+		$key = array(
+			'login' => fUTF8::lower($user_info['login'])
+		);
+	}
+	$user = new User($key);
 
 } catch (fNotFoundException $e) {
 	$user = new User();
@@ -58,8 +65,9 @@ try {
 }
 
 $user->setGravatarId($user_info['gravatar_id']);
-$user->setName($user_info['name']);
-$user->setEmail($user_info['email']);
+$user->setLogin($user_info['login']);
+$user->setName(isset($user_info['name']) ? $user_info['name'] : $user_info['login']);
+$user->setEmail(isset($user_info['email']) ? $user_info['email'] : NULL);
 $user->setFromGithub(TRUE);
 $user->store();
 
